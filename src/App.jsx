@@ -2,8 +2,7 @@
 import React from 'react'
 import NavBar from './components/NavBar.jsx'
 import ItemListContainer from './components/ItemListContainer.jsx';
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 

@@ -1,41 +1,48 @@
 
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget.jsx';
+import { ChakraProvider, Flex, Box, Spacer, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
+
 
 function NavBar() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                <Navbar.Brand href="#home">
-                    ASPEN GROWSHOP
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavDropdown title="NavBar" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">
-                                Genéticas   <i className="bi bi-flower3"></i>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Orgánicos   <i className="bi bi-recycle"></i>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">
-                                Químicos    <i className="bi bi-eyedropper"></i>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Consultas   <i className="bi bi-envelope-at-fill"></i>
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                    <CartWidget />
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <Flex>
+            <Box p='4'>
+                AspenGrowShop
+            </Box>
+            <Spacer />
+            <Menu>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                    Categorias
+                </MenuButton>
+                <MenuList>
+                    <MenuItem>
+                        Nuestras genéticas
+                        <span class="material-symbols-outlined">
+                            psychiatry
+                        </span>
+                    </MenuItem>
+                    <MenuItem>
+                        Nuestras guías
+                        <span class="material-symbols-outlined">
+                            developer_guide
+                        </span>
+                    </MenuItem>
+                    <MenuItem>
+                        Te presupuestamos
+                        <span class="material-symbols-outlined">
+                            checkbook
+                        </span>
+                    </MenuItem>
+                </MenuList>
+            </Menu>
+            <Spacer />
+            <Box p='4'>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                <CartWidget />
+            </Box>
+        </Flex>
     );
 }
 

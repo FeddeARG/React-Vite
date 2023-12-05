@@ -1,0 +1,16 @@
+Versionado:
+
+V1.1:
+Agregamos:
+ - CHAKRA UI.			https://chakra-ui.com/getting-started
+ - Google Icons.		https://fonts.google.com/icons
+
+
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm i @chakra-ui/icons                                                                 
+
+
+
+Quitamos: 
+ - BS Icons.			https://icons.getbootstrap.com/
+ - BS react library. 		https://react-bootstrap.netlify.app/docs/getting-started/introduction
