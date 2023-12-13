@@ -19,19 +19,19 @@ function NavBar() {
                 <MenuList>
                     <MenuItem>
                         Nuestras genéticas
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             psychiatry
                         </span>
                     </MenuItem>
                     <MenuItem>
                         Nuestras guías
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             developer_guide
                         </span>
                     </MenuItem>
                     <MenuItem>
                         Te presupuestamos
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             checkbook
                         </span>
                     </MenuItem>

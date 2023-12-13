@@ -8,7 +8,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 const App = () => {    /* Pascalcase*/
 
-  const greeting = "Bienvenidos a mi eCommerce";
+  const greeting = "   Bienvenidos a mi eCommerce";
   return (
     <div>
       <div>
