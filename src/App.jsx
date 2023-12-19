@@ -6,12 +6,12 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CartWidget from './components/CartWidget.jsx';
 import ItemList from './components/ItemList.jsx';
+import Cart from './components/Cart.jsx';
 
 
 
 const App = () => {    /* Pascalcase*/
 
-  const greeting = "   Bienvenidos a mi eCommerce";
   return (
     <BrowserRouter>
       <div>
@@ -19,12 +19,10 @@ const App = () => {    /* Pascalcase*/
       </div>
       <Routes>
         <Route path='/' element={<main />} />
-        <Route path='/cart' element={<CartWidget />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/itemlist' element={<ItemList />} />
       </Routes>
-      <ItemListContainer
-        greeting={greeting}
-      />
+
     </BrowserRouter>
   )
 }
