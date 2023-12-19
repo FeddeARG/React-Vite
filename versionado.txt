@@ -20,3 +20,7 @@ Quitamos:
  Agregamos: 
     - Item e ItemCount con su respectivo contenido.
 
+
+V1.3:
+Agregamos:
+    - Librería react-router-dom 

@@ -3,13 +3,16 @@ import React from 'react'
 import CartWidget from './CartWidget.jsx';
 import { ChakraProvider, Flex, Box, Spacer, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { Link } from 'react-router-dom';
 
 
 function NavBar() {
     return (
         <Flex>
             <Box p='4'>
-                AspenGrowShop
+                <Link to={'/'}>
+                <p>AspenGrowShop</p> 
+                </Link>
             </Box>
             <Spacer />
             <Menu>
@@ -39,8 +42,12 @@ function NavBar() {
             </Menu>
             <Spacer />
             <Box p='4'>
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                <Link to={"/cart"}>
+              
                 <CartWidget />
+                </Link>
+                
+                
             </Box>
         </Flex>
     );
