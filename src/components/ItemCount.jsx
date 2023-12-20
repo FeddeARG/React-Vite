@@ -5,33 +5,20 @@ import { Button } from '@chakra-ui/react'
 const ItemCount = () => {
     const [contador, setContador] = useState(0)
     const mostrarMensaje = () => {
-        alert(`${contador} productos agregados al carrito de compras`)
+        contador != 0 ? alert(`${contador} producto/s agregado/s al carrito de compras`) : alert(`Tienes ${contador} producto/s en tu lista`)
     }
-    const resta = () => {
-        if (contador > 0) {
-            setContador(contador - 1)
-        } else {
-            alert("No hay productos para quitar")
-        }
-    }
-    const suma = () => {
-        if (contador < 10) {
-            setContador(contador + 1)
-        } else {
-            alert("No puede agregar más de 10 unidades")
-        }
-    }
+    const resta = () => contador > 0 && setContador(contador - 1)
+
+
+    const suma = () => contador < 10 && setContador(contador + 1)   
+    
     return (
         <div>
-            <Button colorScheme='red' size='sm' onClick= {resta}>
-                -
-            </Button>
+            { contador > 0 ? <Button colorScheme='red' size='sm' onClick= {resta}>Quitar</Button> : <Button disabled>Quitar</Button>}
             <Button colorScheme='blue' size='md' onClick={mostrarMensaje}>
                 Agregar al Carrito {contador}
             </Button>
-            <Button colorScheme='green' size='sm' onClick={suma}>
-                +
-            </Button>
+            { contador < 10 ? <Button colorScheme='green' size='sm' onClick= {suma}>Agregar</Button> : <Button disabled>Agregar</Button>}
         </div>
     )
 }

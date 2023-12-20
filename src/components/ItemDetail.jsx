@@ -1,30 +1,30 @@
 import React from 'react'
-import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup } from '@chakra-ui/react'
+import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
-import ItemListContainer from './ItemListContainer'
 
-const ItemDetail = ({ titulo, categoria, descripcion, valor }) => {
-    return (
-        <div>
-            <Card maxW='sm'>
-                <CardBody>
-                    <Stack mt='6' spacing='3'>
-                        <Heading size='md'>
-                            <div>Título: {titulo}</div>
-                        </Heading>
-                        <Text>Categoría: {categoria}</Text>
-                        <Text>Descripción: {descripcion}</Text>
-                        <Text color='blue.600' fontSize='2xl'>Valor: $ {valor}</Text>
-                    </Stack>
-                </CardBody>
-                <CardFooter>
-                    <ButtonGroup spacing='2'>
-                        <ItemCount />
-                    </ButtonGroup>
-                </CardFooter>
-                <Divider />
-            </Card>
-        </div>
-    )
+
+const ItemDetail = ( {item} ) => {
+  return (
+    <div>
+      <Card maxW='sm'>
+        <CardBody>
+          <Stack mt='6' spacing='3'>
+            <Heading size='md' color='green'>
+              <img src={item.imagen} alt={item.nombre} />
+              <p>Producto: {item.nombre}</p>
+            </Heading>
+            <Text color='blue'>Categoría: {item.categoria}</Text>
+            <Text color='blue'>Descripción: {item.descripcion}</Text>
+            <Text color='blue'>Precio: ${item.precio}</Text>
+          </Stack>
+        </CardBody>
+        <CardFooter>
+          <ItemCount />
+        </CardFooter>
+        <Divider />
+      </Card>
+    </div>
+  )
 }
+
 export default ItemDetail

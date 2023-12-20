@@ -1,49 +1,28 @@
-import React from 'react'
-import ItemList from './ItemList'
+import { React, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import {pedirInfo} from '../functions/pedirData'
+import ItemList from './ItemList'
 
 
 const ItemListContainer = () => {
 
-    const productos = [
-        { id: 1, categoria: "Calzado", titulo: "Zapatillas", descripcion: "descripción de Zapatillas", valor: 65000 },
-        { id: 2, categoria: "Calzado", titulo: "Zapatos", descripcion: "descripción de Zapatos", valor: 45000 },
-        { id: 3, categoria: "Vestimenta inferior",  titulo: "Pantalon de vestir", descripcion: "descripción de Pantalon de vestir", valor: 21000 },
-        { id: 4, categoria: "Vestimenta inferior",  titulo: "Jean", descripcion: "descripción de Jean", valor: 25000 },
-        { id: 5, categoria: "Vestimenta superior",  titulo: "Camisa", descripcion: "descripción de Camisa", valor: 20000 },
-        { id: 6, categoria: "Vestimenta superior",  titulo: "Remera", descripcion: "descripción de Remera", valor: 15000 }
-    ]
+    const [ productos, setProductos ] = useState([])
 
-    const estadoArray = new Promise((resolve, reject) => {
+    const category = useParams().category
 
-        if (productos.length > 0) {
-            setTimeout(() => {
-                resolve(productos)
-            }, 2000)
-        } else {
-            reject("No pudimos encontrar productos")
-        }
-    })
-
-    estadoArray
-        .then((afirmativo) => {
-            console.log(afirmativo)
-        })
-        .catch((negativo) => {
-            console.log(negativo)
-        })
+    useEffect(() => {
+        pedirInfo()
+            .then((data) => {
+                setProductos(data)   
+            })
+    }, [])
 
     return (
         <div>
-            <ItemList
-                productos={productos}
-            />
+            <ItemList productos={productos}/>
         </div>
     )
 }
 
+
 export default ItemListContainer;
-
-/* 
-
-*/

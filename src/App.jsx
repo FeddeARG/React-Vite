@@ -1,32 +1,25 @@
-
-import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar.jsx'
+import ItemDetailContainer from './components/ItemDetailContainer.jsx';
 import ItemListContainer from './components/ItemListContainer.jsx';
 import ItemList from './components/ItemList.jsx';
+import NavBar from './components/NavBar.jsx'
 import Cart from './components/Cart.jsx';
+import React from 'react'
 
 
-
-import ItemDetailContainer from './components/ItemDetailContainer.jsx'
-import ItemDetail from './components/ItemDetail.jsx';
-
-const App = () => {    /* Pascalcase*/
+const App = () => {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar />  
       <Routes>
-        <Route path='/itemlist' element={<ItemList />} />
-        <Route exact path='/' element={<ItemListContainer />} />
-        <Route exact path='/item/:id' element={<ItemDetailContainer />} />
-        <Route exact path='/cart' element={<Cart />}></Route>
-        <Route exact path='/detail' element={<ItemDetail />}></Route>
+        <Route exact path="/" element={<ItemListContainer />} />
+        <Route path="/itemlist" element={<ItemList />} />
+        <Route path="/item/:id" element={<ItemDetailContainer itemId={2} />} />
+        <Route exact path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
-    
   )
-  
 }
 
 export default App;

@@ -1,0 +1,6 @@
+[{"id":1, "imagen": "http://dummyimage.com/200x100.png/cc0000/ffffff","categoria":"Calzado","nombre":"Zapatilla", "descripcion":"Descripción de producto A", "precio":"50000"},
+{"id":2, "imagen": "http://dummyimage.com/200x100.png/cc0000/ffffff","categoria":"Calzado","nombre":"Zapato", "descripcion":"Descripción de producto B","precio":"21000"},
+{"id":3, "imagen": "http://dummyimage.com/200x100.png/5fa2dd/ffffff","categoria":"Vestimenta inferior", "descripcion":"Descripción de producto C", "nombre":"Pantalón de vestir","precio":"12000"},
+{"id":4, "imagen": "http://dummyimage.com/200x100.png/5fa2dd/ffffff","categoria":"Vestimenta inferior", "descripcion":"Descripción de producto D", "nombre":"Jean","precio":"10000"},
+{"id":5, "imagen": "http://dummyimage.com/200x100.png/dddddd/000000","categoria":"Vestimenta superior", "descripcion":"Descripción de producto E", "nombre":"Camisa","precio":"14000"},
+{"id":6, "imagen": "http://dummyimage.com/200x100.png/dddddd/000000","categoria":"Vestimenta superior", "descripcion":"Descripción de producto F", "nombre":"Remera","precio":"8000"}]
