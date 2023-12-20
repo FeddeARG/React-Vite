@@ -1,31 +1,26 @@
 import React from 'react'
-import ItemCount from './ItemCount'
-import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
+import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 
-
-const Item = ({ titulo, descripcion, valor }) => {
+const Item = ({ titulo, categoria}) => {
   return (
     <div>
       <Card maxW='sm'>
         <CardBody>
-          <Image src="" />
           <Stack mt='6' spacing='3'>
-            <Heading size='md'>{titulo}</Heading>
-            <Text>
-              {descripcion}
-            </Text>
-            <Text color='blue.600' fontSize='2xl'>
-              {valor}
-            </Text>
+            <Heading size='md'>
+              Título: {titulo}
+            </Heading>
+            <Text>Categoría: {categoria}</Text>
           </Stack>
         </CardBody>
-        <Divider />
         <CardFooter>
-          <ButtonGroup spacing='2'>
-            <ItemCount />
-          </ButtonGroup>
+        <Link to={"/detail"} >
+        <Button>más detalles</Button>
+        </Link>
         </CardFooter>
+        <Divider />
       </Card>
     </div>
   )
@@ -33,7 +28,3 @@ const Item = ({ titulo, descripcion, valor }) => {
 
 export default Item
 
-
-
-
-// CLASE 6 2Hs 05 Min. CONTINUAR CON CARDS DE CHAKRA 

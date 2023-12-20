@@ -1,7 +1,7 @@
 
 import React from 'react'
 import CartWidget from './CartWidget.jsx';
-import { ChakraProvider, Flex, Box, Spacer, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
+import { Flex, Box, Spacer, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ function NavBar() {
         <Flex>
             <Box p='4'>
                 <Link to={'/'}>
-                <p>AspenGrowShop</p> 
+                    <p>Indumentaria Home</p>
                 </Link>
             </Box>
             <Spacer />
@@ -21,33 +21,21 @@ function NavBar() {
                 </MenuButton>
                 <MenuList>
                     <MenuItem>
-                        Nuestras genéticas
-                        <span className="material-symbols-outlined">
-                            psychiatry
-                        </span>
+                        <p>Calzados</p>
                     </MenuItem>
                     <MenuItem>
-                        Nuestras guías
-                        <span className="material-symbols-outlined">
-                            developer_guide
-                        </span>
+                        <p>Prendas inferiores</p>
                     </MenuItem>
                     <MenuItem>
-                        Te presupuestamos
-                        <span className="material-symbols-outlined">
-                            checkbook
-                        </span>
+                        <p>Prendas superiores</p>
                     </MenuItem>
                 </MenuList>
             </Menu>
             <Spacer />
             <Box p='4'>
                 <Link to={"/cart"}>
-              
-                <CartWidget />
+                    <CartWidget />
                 </Link>
-                
-                
             </Box>
         </Flex>
     );
