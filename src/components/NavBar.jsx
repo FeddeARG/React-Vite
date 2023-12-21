@@ -11,7 +11,7 @@ function NavBar() {
         <Flex>
             <Box p='4'>
                 <Link to={'/'}>
-                    <h1>Indumentaria Home</h1>
+                    <h1>Indumentaria </h1>
                 </Link>
             </Box>
             <Spacer />
@@ -21,18 +21,18 @@ function NavBar() {
                 </MenuButton>
                 <MenuList>
                     <MenuItem>
-                        <Link to='#'>
-                            <p>Calzados</p>
+                        <Link to='/category/calzado'>
+                            <p>Calzado</p>
                         </Link>
                     </MenuItem>
                     <MenuItem>
-                        <Link to='#'>
-                            <p>Prendas inferiores</p>
+                        <Link to='/category/pantalon'>
+                            <p>Pantalon</p>
                         </Link>
                     </MenuItem>
                     <MenuItem>
-                        <Link to='#'>
-                            <p>Prendas superiores</p>
+                        <Link to='/category/camisa'>
+                            <p>Camisa</p>
                         </Link>
                     </MenuItem>
                 </MenuList>
