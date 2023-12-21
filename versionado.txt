@@ -23,4 +23,14 @@ Quitamos:
 
 V1.3:
 Agregamos:
-    - Librería react-router-dom 
+    - Librería react-router-dom.
+
+
+VPreEntrega2Naranjo:
+Agregamos:
+    - Functions para poder realizar búsqueda mediante ID o CATEGORIA.
+    - Navegación completa mediante el react-router-dom.
+    - Archivo .gif desde GitHub.
+Modificamos:
+    - El array productos fue modificado en un JSON() para su mejor manejo.
+
