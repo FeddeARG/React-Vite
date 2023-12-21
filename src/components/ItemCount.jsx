@@ -23,4 +23,4 @@ const ItemCount = () => {
     )
 }
 
-export default ItemCount
+export default ItemCount;

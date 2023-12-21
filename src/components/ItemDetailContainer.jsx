@@ -1,25 +1,25 @@
 import { React, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import {pedirDataId} from '../functions/pedirData'
+import { pedirDataId } from '../utils/pedirData'
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
-  
+
     const [item, setItem] = useState(null)
-    const id = useParams().id
-    
+    const { id } = useParams()
+
     useEffect(() => {
         pedirDataId(Number(id))
             .then((res) => {
                 setItem(res)
             })
-    },[id])
-    
+    }, [id])
+
     return (
-    <div>
-        {item && <ItemDetail item={item} />}
-    </div>
-  )
+        <div>
+            {item && <ItemDetail item={item} />}
+        </div>
+    )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
