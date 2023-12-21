@@ -1,4 +1,5 @@
 # React + Vite = Mi proyecto en ReactJs
 
-![gif](https://drive.google.com/file/d/1-9M_SXxaDQCyqTTYPw4fD7xR_jBI1hwC/view?usp=sharing)
 
+
+![PreEntrega2Naranjo](https://github.com/FeddeARG/ReactJs/assets/137233281/de69248e-c7be-4dae-b891-74fe1e19cc81)
