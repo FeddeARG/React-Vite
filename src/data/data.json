@@ -1,6 +1,6 @@
-[{"id":1,"imagen": "http://dummyimage.com/200x100.png/cc0000/ffffff","categoria":"calzado","nombre":"Mocasines","descripcion":"Descripción de producto A", "precio":"50000"},
-{"id":2,"imagen": "http://dummyimage.com/200x100.png/cc0000/ffffff","categoria":"calzado","nombre":"Zapátos","descripcion":"Descripción de producto B","precio":"21000"},
-{"id":3,"imagen": "http://dummyimage.com/200x100.png/5fa2dd/ffffff","categoria":"pantalon","nombre":"Pantalón de vestir","descripcion":"Descripción de producto C","precio":"12000"},
-{"id":4,"imagen": "http://dummyimage.com/200x100.png/5fa2dd/ffffff","categoria":"pantalon","nombre":"Jean","descripcion":"Descripción de producto D","precio":"10000"},
-{"id":5,"imagen": "http://dummyimage.com/200x100.png/dddddd/000000","categoria":"camisa","nombre":"Camisa Blanca","descripcion":"Descripción de producto E","precio":"7000"},
-{"id":6,"imagen": "http://dummyimage.com/200x100.png/dddddd/000000","categoria":"camisa","nombre":"Camisa Negra","descripcion":"Descripción de producto F","precio":"9500"}]
+[{"id":1,"imagen": "http://dummyimage.com/200x100.png/cc0000/ffffff","categoria":"calzado","nombre":"Mocasines","descripcion":"Descripción de producto A", "precio":"14000", "stock": 15},
+{"id":2,"imagen": "http://dummyimage.com/200x100.png/cc0000/ffffff","categoria":"calzado","nombre":"Zapátos","descripcion":"Descripción de producto B","precio":"21000", "stock": 15},
+{"id":3,"imagen": "http://dummyimage.com/200x100.png/5fa2dd/ffffff","categoria":"pantalon","nombre":"Pantalón de vestir","descripcion":"Descripción de producto C","precio":"12000", "stock": 15},
+{"id":4,"imagen": "http://dummyimage.com/200x100.png/5fa2dd/ffffff","categoria":"pantalon","nombre":"Jean","descripcion":"Descripción de producto D","precio":"10000", "stock": 15},
+{"id":5,"imagen": "http://dummyimage.com/200x100.png/dddddd/000000","categoria":"camisa","nombre":"Camisa Blanca","descripcion":"Descripción de producto E","precio":"7000", "stock": 15},
+{"id":6,"imagen": "http://dummyimage.com/200x100.png/dddddd/000000","categoria":"camisa","nombre":"Camisa Negra","descripcion":"Descripción de producto F","precio":"9500", "stock": 15}]

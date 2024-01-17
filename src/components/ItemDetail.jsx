@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
+import { CartContext } from '../context/CartContext'
 
 
-const ItemDetail = ( {item} ) => {
+const ItemDetail = ({ item }) => {
+
+  const { cart, addToCart } = useContext(CartContext)
+
+  const [counter, setCounter] = useState(1)
+
+  const min = () => counter > 1 && setCounter(counter - 1)
+
+  const sum = () => counter < item.stock && setCounter(counter + 1)
+
   return (
     <div>
       <Card maxW='sm'>
@@ -21,7 +31,13 @@ const ItemDetail = ( {item} ) => {
           </Stack>
         </CardBody>
         <CardFooter>
-          <ItemCount />
+          <ItemCount
+            counter={counter}
+            addToCart={()=> {addToCart(item, counter)} }
+            sum={sum}
+            min={min}
+            stock={item.stock}
+          />
         </CardFooter>
         <Divider />
       </Card>

@@ -1,17 +1,18 @@
 
 import React from 'react'
 import CartWidget from './CartWidget.jsx';
-import { Flex, Box, Spacer, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
+import { Flex, Box, Spacer, Menu, MenuButton, Button, MenuList, MenuItem, Heading } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom';
 
 
 function NavBar() {
     return (
+        <Box backgroundColor='#A5B381'>
         <Flex>
-            <Box p='4'>
+            <Box p='4' backgroundColor='#d2d9c1'>
                 <Link to={'/'}>
-                    <h1>Indumentaria </h1>
+                    <Heading size='xl'>Indumentaria </Heading>
                 </Link>
             </Box>
             <Spacer />
@@ -38,12 +39,13 @@ function NavBar() {
                 </MenuList>
             </Menu>
             <Spacer />
-            <Box p='4'>
+            <Box p='4' backgroundColor='#d2d9c1'>
                 <Link to={"/cart"}>
                     <CartWidget />
                 </Link>
             </Box>
         </Flex>
+        </Box>
     );
 }
 
