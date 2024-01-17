@@ -6,14 +6,12 @@ import NavBar from './components/NavBar.jsx'
 import Cart from './components/Cart.jsx';
 import React from 'react'
 
-
-
 const App = () => {
 
 
   return (
-    <CartProvider>
     <BrowserRouter>
+      <CartProvider>
         <NavBar />
         <Routes>
           <Route exact path="/" element={<ItemListContainer />} />
@@ -21,8 +19,8 @@ const App = () => {
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
-      </BrowserRouter>
-    </CartProvider>
+      </CartProvider>
+    </BrowserRouter>
   )
 }
 
