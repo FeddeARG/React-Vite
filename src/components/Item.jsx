@@ -3,21 +3,22 @@ import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } fro
 import { Link } from 'react-router-dom'
 
 
-const Item = ( {producto} ) => {
+const Item = ( { id, categoria, imagen, nombre, precio, stock } ) => {
+
   return (
-    <div>
+    <div key={id}>
       <Card maxW='sm'>
         <CardBody>
           <Stack mt='6' spacing='3'>
             <Heading size='md' color='green'>
-              <img src={producto.imagen} alt={producto.nombre} />
-              <p>Producto: {producto.nombre}</p>
+              <img src={imagen} alt={nombre} />
+              <p>Producto: {nombre}</p>
             </Heading>
-            <Text color='blue'>Categoría: {producto.categoria}</Text>
+            <Text color='blue'>Categoría: {categoria}</Text>
           </Stack>
         </CardBody>
         <CardFooter>
-          <Link to={`/item/${producto.id}`} >
+          <Link to={`/item/${id}`} >
             <Button>más detalles</Button>
           </Link>
         </CardFooter>

@@ -1,25 +1,28 @@
-import { React, useEffect, useState } from 'react'
+import ItemDetail from "./ItemDetail";
+import { useState, useEffect } from "react";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useParams } from 'react-router-dom'
-import { getId } from '../utils/getData'
-import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState(null)
-    const { itemId } = useParams()
+  const { id } = useParams()
+  const [item, setItem] = useState([]);
 
-    useEffect(() => {
-        getId(Number(itemId))
-            .then((res) => {
-                setItem(res)
-            })
-    }, [itemId])
 
-    return (
-        <div>
-            {item && <ItemDetail item={item} />}
-        </div>
-    )
+  useEffect(() => {
+    const db = getFirestore();
+    const oneItem = doc(db, "Indumentaria", `${id}`)
+    getDoc(oneItem).then((snapshot) => {
+      if (snapshot.exists()) {
+        prodFiltrado ({ id: snapshot.id, ...snapshot.data() })
+      }
+    });
+  }, []);
+
+  return (
+    <ItemDetail item={item} />
+  )
+
 }
 
 export default ItemDetailContainer;

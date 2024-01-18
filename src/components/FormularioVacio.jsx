@@ -7,3 +7,4 @@ const FormularioVacio = () => {
 }
 
 export default FormularioVacio
+

@@ -1,16 +1,18 @@
 import { React, useContext } from 'react'
 import { CartContext } from '../context/CartContext';
-import { Card, Image, Stack, Heading, Text, CardFooter, Divider, Box, Button } from '@chakra-ui/react'
+import { Card, Stack, Heading, Text, CardFooter, Divider, Box, Button } from '@chakra-ui/react'
+import BtnsCart from './BtnsCart';
 
 
 
 const Cart = () => {
 
-  const { cart, fullPrice, eraseCart } = useContext(CartContext)
+  const { cart, setCart } = useContext(CartContext)
 
   const clearCart = () => {
     eraseCart()
   }
+
   return (
     <div>
       <br/>
@@ -32,7 +34,7 @@ const Cart = () => {
                 <Heading color='#778751' size='md'>Precio total : ${p.precio * p.counter}.-</Heading>
               </Stack>
               <CardFooter>
-
+                <BtnsCart />
               </CardFooter>
             </Box>
             </Card>
