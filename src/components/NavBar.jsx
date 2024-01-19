@@ -22,25 +22,19 @@ function NavBar() {
                 </MenuButton>
                 <MenuList>
                     <MenuItem>
-                        <Link to='/category/calzado'>
-                            <p>Calzado</p>
-                        </Link>
+                        <Link to='/category/calzado'>Calzado</Link>   
                     </MenuItem>
                     <MenuItem>
-                        <Link to='/category/pantalon'>
-                            <p>Pantalon</p>
-                        </Link>
+                        <Link to='/category/pantalón'>Pantalón</Link>
                     </MenuItem>
                     <MenuItem>
-                        <Link to='/category/camisa'>
-                            <p>Camisa</p>
-                        </Link>
+                        <Link to='/category/camisa'>Camisa</Link>
                     </MenuItem>
                 </MenuList>
             </Menu>
             <Spacer />
             <Box p='4' backgroundColor='#d2d9c1'>
-                <Link to={"/cart"}>
+                <Link to={"/Cart"}>
                     <CartWidget />
                 </Link>
             </Box>

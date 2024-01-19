@@ -1,36 +1,25 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { useParams } from 'react-router-dom';
-import Loader from './Loader'
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+
 
 const ItemDetailContainer = () => {
-  const { id } = useParams()
-  const [item, setItem] = useState([]) 
-  const [loading, setLoading] = useState(true)
+  const [item, setItem] = useState([]);
 
   useEffect(() => {
-    const db = getFirestore();
+    
+      const db = getFirestore();
+      const itemsCollection = collection(db, "ropa");
+      getDocs(itemsCollection).then((querysnapshot) => {
+        const items = querysnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }))
+        setItem(items)
+      })
+    },[])
 
-    const oneItem = doc(db, "Indumentaria", `${id}`);
-    getDoc(oneItem).then((snapshot) => {
-      if (snapshot.exists()) {
-        const doc = snapshot.data()
-        setItem(doc)
-        setLoading(false)
-      }
-    });
-  }, []);
-
-  if (loading === true) {
-    return <Loader />
-  } else {
-    return (
-      <div>
-        {item && <ItemDetail item={item} />}
-      </div>
-    )
-  }
+  return <ItemDetail items={item} />
 };
 
 export default ItemDetailContainer;
