@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
+import { React, useContext, useState } from 'react'
 import { Button } from '@chakra-ui/react'
 import { CartContext} from '../context/CartContext'
 
-const ItemCount = ( { id, nombre, stock, precio } ) => {
 
-    const [cart, setCart] = useContext(CartContext);
+const ItemCount = ( item ) => {
+
+    const {cart, setCart} = useContext(CartContext);
     const [counter, setCounter] = useState(1);
   
     const sum = () => {
@@ -16,20 +17,16 @@ const ItemCount = ( { id, nombre, stock, precio } ) => {
     };
   
     const addToCart = () => {
-      setCart((cartActual) => {
-        const isInCart = cartActual.find((item) => item.id === id);
-        if (isInCart) {
-          return cartActual.map((item) => {
-            if (item.id === id) {
-              return { ...item, stock: item.stock + count };
-            } else {
-              return item;
-            }
-          });
-        } else {
-          return [...cartActual, { id, stock: counter, precio, nombre }];
-        }
-      });
+      const itemAdd = {...item.item, counter}
+      const newCart = [...cart]
+      const isInCart = newCart.find((item) => item.id === id);
+       
+      if (isInCart) {
+        isInCart.counter = isInCart.counter + counter
+        setCart(newCart)
+      }else {
+        setCart ( [...cart, itemAdd] )
+      }
     };
 
     return (

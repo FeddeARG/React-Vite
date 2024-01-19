@@ -1,7 +1,7 @@
 import { React, useContext } from 'react'
 import { CartContext } from '../context/CartContext';
 import { Card, Stack, Heading, Text, CardFooter, Divider, Box, Button } from '@chakra-ui/react'
-import BtnsCart from './BtnsCart';
+import {Link} from 'react-router-dom'
 
 
 
@@ -10,8 +10,9 @@ const Cart = () => {
   const { cart, setCart } = useContext(CartContext)
 
   const clearCart = () => {
-    eraseCart()
+    setCart([])
   }
+
 
   return (
     <div>

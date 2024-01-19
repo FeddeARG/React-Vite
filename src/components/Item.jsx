@@ -3,22 +3,22 @@ import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } fro
 import { Link } from 'react-router-dom'
 
 
-const Item = ( { id, categoria, imagen, nombre, precio, stock } ) => {
+const Item = ( { item } ) => {
 
   return (
-    <div key={id}>
+    <div>
       <Card maxW='sm'>
         <CardBody>
           <Stack mt='6' spacing='3'>
             <Heading size='md' color='green'>
-              <img src={imagen} alt={nombre} />
-              <p>Producto: {nombre}</p>
+              <img src={item.imagen} alt={item.nombre} />
+              <p>Producto: {item.nombre}</p>
             </Heading>
-            <Text color='blue'>Categoría: {categoria}</Text>
+            <Text color='blue'>Categoría: {item.categoria}</Text>
           </Stack>
         </CardBody>
         <CardFooter>
-          <Link to={`/item/${id}`} >
+          <Link to={`/item/${item.id}`} >
             <Button>más detalles</Button>
           </Link>
         </CardFooter>
@@ -28,5 +28,5 @@ const Item = ( { id, categoria, imagen, nombre, precio, stock } ) => {
   )
 }
 
-export default React.memo(Item);
+export default Item;
 
