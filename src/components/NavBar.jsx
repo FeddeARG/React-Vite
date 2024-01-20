@@ -30,6 +30,11 @@ function NavBar() {
               </Link>
             </MenuItem>
             <MenuItem>
+              <Link to='/orden' color='black'>
+                Orden
+              </Link>
+            </MenuItem>
+            <MenuItem>
               <Link to='/category/camisa' color='black'>
                 Camisa
               </Link>

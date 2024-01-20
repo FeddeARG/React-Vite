@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer.jsx';
 import NavBar from './components/NavBar.jsx'
 import Cart from './components/Cart.jsx';
 import React from 'react'
+import FormPedido from './components/FormPedido.jsx';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/orden" element={<FormPedido />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>
