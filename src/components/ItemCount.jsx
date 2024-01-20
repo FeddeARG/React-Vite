@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Button, ButtonGroup, Tooltip, IconButton, Center } from '@chakra-ui/react';
+import { Button, ButtonGroup, IconButton, Center } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { CartContext } from '../context/CartContext';
 
