@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Container, Card, Stack, Heading, CardFooter, Divider, Box, Button, Image, Text } from '@chakra-ui/react';
 
