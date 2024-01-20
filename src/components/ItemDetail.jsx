@@ -1,59 +1,67 @@
-import ItemCount from './ItemCount'
-import { Container, Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Image } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
-import { doc, getDoc, getFirestore } from 'firebase/firestore'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Container, Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Image } from '@chakra-ui/react';
+import { useParams } from 'react-router-dom';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import ItemCount from './ItemCount';
 
 const ItemDetail = ({ items }) => {
-  
-  
-  const { id } = useParams()
-
-  const [objeto, setObjeto] = useState([])
+  const { id } = useParams();
+  const [producto, setProducto] = useState([]);
 
   useEffect(() => {
-    const db = getFirestore()
+    const db = getFirestore();
+    const ropaRef = doc(db, "ropa", `${id}`);
 
-    const itemRef = doc(db, "ropa", `${id}`)
-
-    getDoc(itemRef).then((snapshot) => {
+    getDoc(ropaRef).then((snapshot) => {
       if (snapshot.exists()) {
-        setObjeto(snapshot.data())
+        setProducto(snapshot.data());
       } else {
-        console.log("Error: No se encuentra el producto")
+        console.log("Error: No se encuentra el producto");
       }
-    })
-  }, [])
+    });
+  }, [id]);
 
-  const itemFilter = items.filter((item) => item.id == id)
+  const itemFilter = items.filter((item) => item.id == id);
 
   return (
-    <Container>
+    <Container maxW='xl' mt='8'>
       {itemFilter.map((item) => (
         <div key={item.id}>
-          <Card maxW='sm' p="4" borderWidth="1px" borderRadius="md">
+          <Card maxW='sm' mx='auto' p='6' borderWidth='1px' borderRadius='lg' boxShadow='lg' maxH='auto'>
+            <Image src={item.imagen} alt={item.nombre} borderRadius='lg' />
             <CardBody>
-              <Stack mt='6' spacing='3'>
-                <Heading size='md' color='green'>
-                  <Image src={item.imagen} alt={item.nombre} width="100%" height="auto" />
-                  <br />
-                  <br />
-                  <p>Producto: {item.nombre}</p>
+              <Stack spacing='6'>
+                <Heading size='2xl' color='green' textAlign='center'>
+                  {item.nombre}
                 </Heading>
-                <Text color='blue'>Categoría: {item.categoria}</Text>
-                <Text color='blue'>Descripción: {item.descripcion}</Text>
-                <Text color='blue'>Precio: ${item.precio}</Text>
+                <Text fontSize='2xl' color='blue' textAlign='center' fontFamily='customFont'>
+                  Categoría: {item.categoria}
+                </Text>
+                <Text fontSize='2xl' color='blue' textAlign='center' fontFamily='customFont'>
+                  Descripción: {item.descripcion}
+                </Text>
+                <Text fontSize='2xl' color='red' textAlign='center' fontFamily='customFont'>
+                  Precio: ${item.precio}
+                </Text>
               </Stack>
             </CardBody>
-            <CardFooter>
-              <ItemCount item={item} />
-            </CardFooter>
             <Divider />
+            <CardFooter mt='4' textAlign='center'>
+              <ItemCount
+                id={item.id}
+                nombre={item.nombre}
+                precio={item.precio}
+                stock={item.stock}
+                item={item}
+                imagen={item.imagen}
+              />
+            </CardFooter>
           </Card>
         </div>
       ))}
     </Container>
-  )
-}
+  );
+};
 
 export default ItemDetail;
+
