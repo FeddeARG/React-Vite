@@ -6,7 +6,7 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({ items }) => {
   const { id } = useParams();
-  const [producto, setProducto] = useState([]);
+  const [item, setItem] = useState([]);
 
   useEffect(() => {
     const db = getFirestore();
@@ -14,7 +14,7 @@ const ItemDetail = ({ items }) => {
 
     getDoc(ropaRef).then((snapshot) => {
       if (snapshot.exists()) {
-        setProducto(snapshot.data());
+        setItem(snapshot.data());
       } else {
         console.log("Error: No se encuentra el producto");
       }
