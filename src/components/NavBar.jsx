@@ -42,11 +42,9 @@ function NavBar() {
           </MenuList>
         </Menu>
         <Spacer />
-        <Link to='/Cart'>
           <Box p='2' backgroundColor='#d2d9c1' borderRadius='md'>
             <CartWidget />
           </Box>
-        </Link>
       </Flex>
     </Box>
   );
