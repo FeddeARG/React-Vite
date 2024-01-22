@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Button, Text, Input, VStack } from '@chakra-ui/react'
 import { addDoc, getFirestore, collection } from 'firebase/firestore'
+import { CartContext } from '../context/CartContext'
 
 
 const FormPedido = () => {
 
-const [ nombre, setNombre ] = useState ("")
+const [ name, setName ] = useState ("")
 const [ email, setEmail ] = useState ("") 
 const [ orderId, setOrderId ] = useState ("") 
 
@@ -20,9 +21,11 @@ const askCart = (e) => {
   setOrderId(id))
 }
 
+const [ cart, setCart ] = useContext(CartContext)
+
 const order = {
-  nombre,
-  email
+  usuario: { name, email },
+  items: cart
 }
 
 return (
@@ -31,7 +34,7 @@ return (
       <Input
         type="text"
         placeholder="Nombre"
-        onChange={(e) => setNombre(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         mb={2}
         w="100%"
       />

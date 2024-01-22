@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Container, Card, Stack, Heading, CardFooter, Divider, Box, Button, Image, Text } from '@chakra-ui/react';
-
+import { Link } from 'react-router-dom'
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
 
@@ -26,7 +26,7 @@ const Cart = () => {
   const increaseOne = (itemId) => {
     const itemIndex = cart.findIndex((item) => item.id === itemId);
 
-    if (itemIndex !== +1) {
+    if (itemIndex !== -1) {
       const newCart = [...cart];
       newCart[itemIndex].stock++;
 
@@ -89,6 +89,11 @@ const Cart = () => {
       <Button mt={4} colorScheme="teal" onClick={clearCart}>
         Vaciar Carrito
       </Button>
+      <Link to="/orden">
+        <Button mt={4} colorScheme="green">
+          Confirmar compra
+        </Button>
+      </Link>
     </Container>
   );
 };
