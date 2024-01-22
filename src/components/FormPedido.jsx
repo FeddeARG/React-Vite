@@ -8,6 +8,7 @@ const FormPedido = () => {
 
 const [ name, setName ] = useState ("")
 const [ email, setEmail ] = useState ("") 
+const [ phone, setPhone ] = useState ("")
 const [ orderId, setOrderId ] = useState ("") 
 
 
@@ -24,8 +25,9 @@ const askCart = (e) => {
 const [ cart, setCart ] = useContext(CartContext)
 
 const order = {
-  usuario: { name, email },
-  items: cart
+  buyer: { name, email, phone },
+  items: cart,
+  date: Date()
 }
 
 return (
@@ -42,6 +44,13 @@ return (
         type="email"
         placeholder="eMail"
         onChange={(e) => setEmail(e.target.value)}
+        mb={2}
+        w="100%"
+      />
+      <Input
+        type="tel"
+        placeholder="Teléfono"
+        onChange={(e) => setPhone(e.target.value)}
         mb={2}
         w="100%"
       />
