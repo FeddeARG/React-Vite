@@ -24,7 +24,7 @@ const FormPedido = () => {
     }
 
     const order = {
-      cliente: { name, email, phone },
+      client: { name, email, phone },
       items: cart,
       date: Date(),
     };
