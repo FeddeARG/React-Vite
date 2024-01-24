@@ -38,8 +38,11 @@ const Cart = () => {
   };
 
   const fullPrice = () => {
-    return cart.reduce((acu, item) => acu + item.precio * item.stock, 0);
-  };
+    if (!Array.isArray(cart)) {
+      return 0;
+    } else {
+      return cart.reduce((acu, item) => acu + item.precio * item.stock, 0);
+  }}
 
   return (
     <Container maxW="xl" centerContent>
