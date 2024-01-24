@@ -8,6 +8,8 @@
 
 - **Chakra UI:** Utilizado para estilizar elementos e iconos. ![Chakra UI Badge](https://img.shields.io/badge/Chakra_UI-%23319798.svg?logo=chakra-ui&logoColor=%23ffffff)
 
+- **SweetAlert2:** Utilizado para crear ventanas modales atractivas e interactivas. ![SweetAlert2 Badge](https://img.shields.io/badge/SweetAlert2-%23FF2D20.svg?logo=sweetalert&logoColor=%23ffffff)
+
 - **Firebase:** Empleado para la gestión de datos. Se utiliza específicamente Firestore para la base de datos y funciones de almacenamiento, brindando una integración robusta con la aplicación. ![Firebase Badge](https://img.shields.io/badge/Firebase-%23039BE5.svg?logo=firebase)
 
 
@@ -29,11 +31,11 @@ El eCommerce simula un local de indumentaria, permitiendo a los usuarios:
 
 1. **Clonar el Repositorio:**
    ```bash
-    git clone https://github.com/tuusuario/tuproyecto.git
+    git clone https://github.com/tuusuario/esteproyecto.git
 
 2. **Instalar dependencias:**
    ```bash
-    cd tuproyecto
+    cd nombredeesteproyecto
     npm install
 
 3. **Ejecutar la aplicación:**
