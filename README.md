@@ -45,7 +45,8 @@ El eCommerce simula un local de indumentaria, permitiendo a los usuarios:
 **.GIF de navegación y funcionalidad:**
 
 
-![PFinalNaranjo](https://github.com/FeddeARG/ReactJs/assets/137233281/357acedf-521f-4c88-a1c0-7cab59cf82a7)
+![PFinalNaranjo](https://github.com/FeddeARG/React-Vite/assets/137233281/52a0969f-c681-415e-8dd5-54eb40035271)
+
 
 
 Contribuciones y Problemas
