@@ -3,46 +3,8 @@ import { CartContext } from '../context/CartContext';
 import { Container, Card, Stack, Heading, CardFooter, Divider, Box, Button, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom'
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, fullPrice, increaseOne, eraseOne, clearCart] = useContext(CartContext);
 
-  const clearCart = () => {
-    setCart([]);
-  };
-
-  const eraseOne = (itemId) => {
-    const itemIndex = cart.findIndex((item) => item.id === itemId);
-
-    if (itemIndex !== -1) {
-      const newCart = [...cart];
-      newCart[itemIndex].stock--;
-
-      if (newCart[itemIndex].stock === 0) {
-        newCart.splice(itemIndex, 1);
-      }
-      setCart(newCart);
-    }
-  };
-
-  const increaseOne = (itemId) => {
-    const itemIndex = cart.findIndex((item) => item.id === itemId);
-
-    if (itemIndex !== -1) {
-      const newCart = [...cart];
-      newCart[itemIndex].stock++;
-
-      if (newCart[itemIndex].stock === 0) {
-        newCart.splice(itemIndex, 1);
-      }
-      setCart(newCart);
-    }
-  };
-
-  const fullPrice = () => {
-    if (!Array.isArray(cart)) {
-      return 0;
-    } else {
-      return cart.reduce((acu, item) => acu + item.precio * item.stock, 0);
-  }}
 
   return (
     <Container maxW="xl" centerContent>
