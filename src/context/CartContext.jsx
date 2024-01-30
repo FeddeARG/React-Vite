@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext(null)
 
@@ -51,7 +52,12 @@ export const CartProvider = ( { children } ) => {
             ) {
               return acu + item.precio * item.stock;
             } else {
-              console.warn("Invalid item in cart:", item);
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Item inválido dentro del carrito",
+                footer: '<a href="#">Porqué veo éste mensaje?</a>'
+              });
               return acu;
             }
           }, 0);
